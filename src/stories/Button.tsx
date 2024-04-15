@@ -15,6 +15,7 @@ export const Button = ({ label, ...rest }: ButtonProps) => {
   return <MuiButton {...rest}>{label}</MuiButton>;
 };
 
+// Set default properties
 Button.defaultProps = {
   color: "inherited",
   size: "medium",
