@@ -1,17 +1,15 @@
 import type { Preview } from "@storybook/react";
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import '@fontsource/material-icons';
-
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/material-icons";
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { withThemeFromJSXProvider } from "@storybook/addon-themes"
+import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 
 import { theme } from "../src/theme";
 import theme from "../src/theme";
-
 
 const preview: Preview = {
   parameters: {
@@ -27,22 +25,23 @@ const preview: Preview = {
 export default preview;
 
 export const decorators = [
-    withThemeFromJSXProvider({
-        themes: {
-            default: theme,
-        },
-        defaultTheme: "default",
-        Provder: ThemeProvider,
-        GlobalStyles: CssBaseline
-    }),
-]
+  withThemeFromJSXProvider({
+    themes: {
+      default: theme,
+    },
+    defaultTheme: "default",
+    Provider: ThemeProvider,
+    GlobalStyles: CssBaseline,
+  }),
+];
 
 export const parameters = {
-    controls: {
-        expanded: true,
-        matchers: {
-            color: /(background|color)$/i,
-            date: /Date$/,
-        }
-    }
-}
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    expanded: true, // Adds the description and default columns
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+};
