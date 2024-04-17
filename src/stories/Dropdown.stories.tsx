@@ -30,10 +30,12 @@ const childItems = (
   </>
 );
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Example: Story = {
   args: {
+    id: "dropdown",
     color: "primary",
-    label: "Primary Dropdown",
+    // label: "Primary Dropdown",
     children: childItems,
+    // componentsProps,
   },
 };
