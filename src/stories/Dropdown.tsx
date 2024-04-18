@@ -21,7 +21,4 @@ export const Dropdown = ({ label, children, ...rest }: SelectProps) => {
 };
 
 // Set default properties
-Dropdown.defaultProps = {
-  color: "inherited",
-  variant: "standard",
-};
+Dropdown.defaultProps = {};

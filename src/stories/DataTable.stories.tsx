@@ -96,8 +96,8 @@ export const Example: Story = {
     // componentsProps,
     header: headCells,
     rows,
-    selectedRows: [],
+    selectedRows: [], // Add the 'selectedRows' property
     orderBy: "movieName",
     rowCount: rows.length,
   },
-};
+} as Story; // Add the type assertion to Story.

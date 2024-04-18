@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 import { Dropdown } from "./Dropdown";
 import MenuItem from "@mui/material/MenuItem/MenuItem";
 
@@ -13,7 +12,6 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
-  //   args: { onClick: fn() },
 } satisfies Meta<typeof Dropdown>;
 
 export default meta;
@@ -34,8 +32,7 @@ export const Example: Story = {
   args: {
     id: "dropdown",
     color: "primary",
-    // label: "Primary Dropdown",
+    label: "Dropdown Label", // Add the 'label' property with a string value
     children: childItems,
-    // componentsProps,
   },
 };
