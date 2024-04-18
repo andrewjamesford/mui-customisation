@@ -1,11 +1,10 @@
-import  Container  from '@mui/material/Container';
-import  Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import { Button } from './stories/Button';
-import './App.css'
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { Button } from "./stories/Button";
+import "./App.css";
 
 function App() {
-
   return (
     <>
       <Container>
@@ -17,7 +16,7 @@ function App() {
         </Box>
       </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
