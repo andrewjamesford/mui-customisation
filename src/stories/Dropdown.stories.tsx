@@ -17,16 +17,21 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const childItems = (
-  <>
-    <MenuItem value="">
-      <em>None</em>
-    </MenuItem>
-    <MenuItem value={10}>Ten</MenuItem>
-    <MenuItem value={20}>Twenty</MenuItem>
-    <MenuItem value={30}>Thirty</MenuItem>
-  </>
-);
+// Add a 'children' array with the following items
+const childItems = [
+  <MenuItem value={0} key={0}>
+    <em>None</em>
+  </MenuItem>,
+  <MenuItem value={10} key={10}>
+    Ten
+  </MenuItem>,
+  <MenuItem value={20} key={20}>
+    Twenty
+  </MenuItem>,
+  <MenuItem value={30} key={30}>
+    Thirty
+  </MenuItem>,
+];
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Example: Story = {
   args: {

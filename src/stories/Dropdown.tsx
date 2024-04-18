@@ -12,7 +12,6 @@ export interface SelectProps extends SelectBaseProps {
 
 export const Dropdown = ({ label, children, ...rest }: SelectProps) => {
   // Pass 'children' to the MuiSelect component
-
   return (
     <MuiSelect label={label} {...rest} sx={{ minWidth: 150 }}>
       {children}
