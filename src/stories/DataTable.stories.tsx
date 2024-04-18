@@ -93,11 +93,15 @@ const rows: Data[] = [
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Example: Story = {
   args: {
-    // componentsProps,
     header: headCells,
     rows,
-    selectedRows: [], // Add the 'selectedRows' property
-    orderBy: "movieName",
-    rowCount: rows.length,
+  },
+} as Story; // Add the type assertion to Story.
+
+export const ZebraStriped: Story = {
+  args: {
+    header: headCells,
+    rows,
+    zebraStriped: true, // Add the 'zebraStriped' property
   },
 } as Story; // Add the type assertion to Story.
