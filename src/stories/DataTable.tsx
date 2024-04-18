@@ -5,20 +5,7 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import TableSortLabel from "@mui/material/TableSortLabel";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-import DeleteIcon from "@mui/icons-material/Delete";
-import FilterListIcon from "@mui/icons-material/FilterList";
-import { visuallyHidden } from "@mui/utils";
 
 export interface Data {
   id: number;
@@ -29,7 +16,6 @@ export interface Data {
 }
 
 export interface HeadCell {
-  disablePadding: boolean;
   id: keyof Data;
   label: string;
   numeric: boolean;
@@ -37,43 +23,21 @@ export interface HeadCell {
 
 interface TableHeaderProps {
   headCells: readonly HeadCell[];
-  numSelected: number;
-  onRequestSort: (
-    event: React.MouseEvent<unknown>,
-    property: keyof Data
-  ) => void;
-  onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  order: () => void;
-  orderBy: string;
-  rowCount: number;
 }
 
 interface TableProps {
-  selectedRows: number[];
-  orderBy: string;
-  rowCount: number;
   rows: Data[];
   header: HeadCell[];
 }
 
 const TableHeader = (props: TableHeaderProps) => {
-  const {
-    onSelectAllClick,
-    order,
-    orderBy,
-    numSelected,
-    rowCount,
-    onRequestSort,
-    headCells,
-  } = props;
+  const { headCells } = props;
   return (
     <TableHead>
       <TableRow>
         <TableCell></TableCell>
         {headCells.map((headCell) => (
-          <TableCell key={headCell.id}>
-            <TableSortLabel>{headCell.label}</TableSortLabel>
-          </TableCell>
+          <TableCell key={headCell.id}>{headCell.label}</TableCell>
         ))}
       </TableRow>
     </TableHead>
@@ -81,7 +45,7 @@ const TableHeader = (props: TableHeaderProps) => {
 };
 
 export const DataTable = (props: TableProps) => {
-  const { rows, selectedRows, orderBy, rowCount, header } = props;
+  const { rows, header } = props;
   return (
     <TableContainer>
       <Table
@@ -89,19 +53,13 @@ export const DataTable = (props: TableProps) => {
         aria-labelledby="tableTitle"
         size={"medium"}
       >
-        <TableHeader
-          headCells={header}
-          numSelected={0}
-          onSelectAllClick={() => {}}
-          order={() => {}}
-          orderBy=""
-          onRequestSort={() => {}}
-          rowCount={0}
-        />
+        <TableHeader headCells={header} />
         <TableBody>
-          {rows.map((row, index) => (
-            <TableRow>
-              <></>
+          {rows.map((row) => (
+            <TableRow key={row.id}>
+              {Object.keys(row).map((key) => (
+                <TableCell key={key}>{row[key as keyof Data]}</TableCell>
+              ))}
             </TableRow>
           ))}
         </TableBody>

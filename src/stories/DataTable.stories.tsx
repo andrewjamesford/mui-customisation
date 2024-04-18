@@ -2,7 +2,6 @@ import { Data, DataTable, HeadCell } from "./DataTable";
 import { createData } from "./DataTableUtils";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -14,7 +13,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
-  args: { onClick: fn() },
+  args: {},
 } satisfies Meta<typeof DataTable>;
 
 export default meta;
@@ -25,25 +24,24 @@ const headCells: HeadCell[] = [
   {
     id: "movieName",
     numeric: false,
-    disablePadding: true,
     label: "Movie Name",
   },
   {
     id: "director",
     numeric: false,
-    disablePadding: false,
+
     label: "Director",
   },
   {
     id: "year",
     numeric: true,
-    disablePadding: false,
+
     label: "Year",
   },
   {
     id: "rating",
     numeric: true,
-    disablePadding: false,
+
     label: "Rating",
   },
 ];
@@ -63,21 +61,21 @@ const rows: Data[] = [
     "The Lord of the Rings: The Return of the King",
     "Peter Jackson",
     2003,
-    8.9
+    8.9,
   ),
   createData(
     11,
     "The Lord of the Rings: The Fellowship of the Ring",
     "Peter Jackson",
     2001,
-    8.8
+    8.8,
   ),
   createData(
     12,
     "The Lord of the Rings: The Two Towers",
     "Peter Jackson",
     2002,
-    8.7
+    8.7,
   ),
   createData(13, "The Godfather: Part II", "Francis Ford Coppola", 1974, 9.0),
   createData(14, "The Dark Knight Rises", "Christopher Nolan", 2012, 8.4),
@@ -87,7 +85,7 @@ const rows: Data[] = [
     "Star Wars: Episode IV - A New Hope",
     "George Lucas",
     1977,
-    8.6
+    8.6,
   ),
   createData(17, "2001: A Space Odyssey", "Stanley Kubrick", 1968, 8.3),
 ];
