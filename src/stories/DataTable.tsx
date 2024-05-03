@@ -60,7 +60,7 @@ export const DataTable = (props: TableProps) => {
   return (
     <TableContainer>
       <Table
-        sx={{ minWidth: 750 }}
+        sx={{ minWidth: [300, 750] }}
         aria-labelledby="tableTitle"
         size={"medium"}
       >

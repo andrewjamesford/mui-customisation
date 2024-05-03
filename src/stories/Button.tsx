@@ -17,7 +17,7 @@ export const Button = ({ label, ...rest }: ButtonProps) => {
 
 // Set default properties
 Button.defaultProps = {
-  color: "inherited",
+  color: "inherit",
   size: "medium",
   variant: "outlined",
 };

@@ -8,7 +8,6 @@ import "@fontsource/material-icons";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 
-import { theme } from "../src/theme";
 import theme from "../src/theme";
 
 const preview: Preview = {
